@@ -5,8 +5,6 @@ export default function Document() {
 		<Html lang="en">
 			<Head>
 				<meta charSet="utf-8" />
-				<title>CreativeFund | funding platform for creative projects</title>
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
 				<meta name="description" content="creative is nothingbut a mind set free." />
 				{/* <link rel="icon" href="/asset/favicon.ico" type="image/x-icon" /> */}
 				<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
