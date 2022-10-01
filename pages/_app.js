@@ -1,4 +1,5 @@
 import Head from "next/head";
+import { Container } from "semantic-ui-react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import "../styles/app.css";
@@ -10,11 +11,13 @@ function MyApp({ Component, pageProps }) {
       <title>CreativeFund | funding platform for creative projects</title>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
     </Head>
-    <main>
+    <Container fluid>
       <Header />
-      <Component {...pageProps} />
+      <Container>
+        <Component {...pageProps} />
+      </Container>
       <Footer />
-    </main>
+    </Container>
   </>)
 }
 

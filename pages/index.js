@@ -1,10 +1,23 @@
+import { Button, Card } from 'semantic-ui-react';
 import factory from '../ethereum/factory';
 
 function HomePage({ campaigns }) {
-  return (<>
-    <div>Welcome to Next.js!</div>
-    <div>First campaign : {campaigns[0]}</div>
-  </>)
+  const items = campaigns.map((item) => {
+    return {
+      header: item,
+      description: <a>View Campaign</a>,
+      fluid: true,
+    };
+  });
+
+  return (
+    <>
+      <div>Welcome to Next.js!</div>
+      <h3>Open Campaigns</h3>
+      <Button content="Create Campaign" icon="add circle" floated='right' primary />
+      <Card.Group items={items} />
+    </>
+  )
 }
 
 export async function getServerSideProps() {
