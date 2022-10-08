@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <a className="footer" href="http://thanachon.me/" target="_blank" rel="noopener noreferrer">&copy; Copyright 2022 Thanachon</a>
   )
 }
 

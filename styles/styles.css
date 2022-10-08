@@ -1,3 +1,22 @@
 .input-search {
   margin: 0.75rem 1rem;
 }
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Lato, 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  color: rgba(0, 0, 0, .87);
+  font-size: .92857143em;
+  font-weight: 700;
+  border: 1px solid rgba(34, 36, 38, .15);
+  box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+}
