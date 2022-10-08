@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import React from 'react';
 import { useState } from 'react';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
@@ -10,6 +11,8 @@ const newCampaign = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [loading, setLoading] = useState(false);
 
+  const router = useRouter();
+
   const onSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -21,16 +24,17 @@ const newCampaign = () => {
         .send({
           from: account[0]
         });
+      router.push("/");
     } catch (error) {
       setErrorMessage(error.message);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   return (
     <div>
-      <h1>New Campaign!</h1>
+      <h2>New Campaign!</h2>
 
       <Form onSubmit={onSubmit} error={!!errorMessage}>
         <Form.Field>

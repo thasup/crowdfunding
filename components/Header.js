@@ -1,5 +1,6 @@
-import React, { useState } from 'react'
-import { Icon, Input, Menu } from 'semantic-ui-react'
+import React, { useState } from "react";
+import { Icon, Input, Menu } from "semantic-ui-react";
+import Link from "next/link";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("");
@@ -8,33 +9,32 @@ const Header = () => {
     setActiveItem(name);
   }
   return (
-    <Menu className='navbar' size='large' fluid>
-      <Menu.Item header>CreativeFund</Menu.Item>
-      <Menu.Item
-        name='discover'
-        active={activeItem === 'discover'}
-        onClick={handleItemClick}
-      />
-      <Menu.Item
-        name='aboutUs'
-        active={activeItem === 'aboutUs'}
-        onClick={handleItemClick}
-      />
-      <Menu.Item
-        name='help'
-        active={activeItem === 'help'}
-        onClick={handleItemClick}
-      />
+    <Menu className="navbar" size="large" fluid>
+      <Link href="/" passHref>
+        <Menu.Item header>CreativeFund</Menu.Item>
+      </Link>
 
-      <Menu.Menu position='right'>
-        <Input className='icon input-search' icon='search' placeholder='Search campaign...' />
-        <Menu.Item
-          name='contact'
-          active={activeItem === 'contact'}
-          onClick={handleItemClick}
-        >
-          <Icon name='add' />
-        </Menu.Item>
+      <Link href="/discover" passHref>
+        <Menu.Item name="discover" />
+      </Link>
+
+      <Link href="/about" passHref>
+        <Menu.Item name="aboutUs" />
+      </Link>
+
+      <Link href="/help" passHref>
+        <Menu.Item name="help" />
+      </Link>
+
+      <Menu.Menu position="right">
+        <Input className="icon input-search" icon="search" placeholder="Search campaign..." />
+        <Link href="/campaigns/new" passHref>
+          <Menu.Item
+            name="contact"
+          >
+            <Icon name="add" />
+          </Menu.Item>
+        </Link>
       </Menu.Menu>
     </Menu>
   )

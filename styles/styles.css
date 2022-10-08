@@ -2,6 +2,14 @@
   margin: 0.75rem 1rem;
 }
 
+.ui.menu .item>i.icon {
+  margin: 0;
+}
+
+.ui.form .field .ui.input {
+  width: 12rem;
+}
+
 .footer {
   position: fixed;
   left: 0;

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Button, Card } from 'semantic-ui-react';
 import factory from '../ethereum/factory';
 
@@ -12,9 +13,10 @@ function HomePage({ campaigns }) {
 
   return (
     <>
-      <div>Welcome to Next.js!</div>
-      <h3>Open Campaigns</h3>
-      <Button content="Create Campaign" icon="add circle" floated='right' primary />
+      <h2>Open Campaigns</h2>
+      <Link href="/campaigns/new" passHref >
+        <Button content="Create Campaign" icon="add circle" floated='right' primary />
+      </Link>
       <Card.Group items={items} />
     </>
   )
