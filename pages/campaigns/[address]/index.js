@@ -1,9 +1,10 @@
+import Link from 'next/link';
 import React from 'react'
-import { Card, Grid } from 'semantic-ui-react';
-import ContributeForm from '../../components/ContributeForm';
+import { Button, Card, Grid } from 'semantic-ui-react';
+import ContributeForm from '../../../components/ContributeForm';
 
-import Campaign from '../../ethereum/campaign'
-import web3 from '../../ethereum/web3';
+import Campaign from '../../../ethereum/campaign'
+import web3 from '../../../ethereum/web3';
 
 const showCampaign = ({ contractAddress, minimumContribution, balance, requestsCount, approversCount, managerAddress }) => {
   const items = [
@@ -13,7 +14,7 @@ const showCampaign = ({ contractAddress, minimumContribution, balance, requestsC
       description: "Manager created this campaign and can create requests to withdraw money",
       style: { overflowWrap: "break-word" }
     }, {
-      header: minimumContribution,
+      header: web3.utils.fromWei(minimumContribution, "ether"),
       meta: "Minimum Contribution (ether)",
       description:
         "You must contribute at least this amount of ETH to become an approver",
@@ -40,16 +41,24 @@ const showCampaign = ({ contractAddress, minimumContribution, balance, requestsC
 
   return (
     <>
-      <h2>ShowCampaign Page</h2>
-      <p>contract address : {contractAddress}</p>
+      <h2>Campaign Detail</h2>
+      <p><strong>Contract Address : </strong>{contractAddress}</p>
 
       <Grid>
-        <Grid.Column width={12}>
-          <Card.Group items={items} />
-        </Grid.Column>
-        <Grid.Column width={4}>
-          <ContributeForm address={contractAddress} />
-        </Grid.Column>
+        <Grid.Row>
+          <Grid.Column width={12}>
+            <Card.Group items={items} />
+          </Grid.Column>
+          <Grid.Column width={4}>
+            <ContributeForm address={contractAddress} />
+          </Grid.Column>
+        </Grid.Row>
+
+        <Grid.Row style={{ marginLeft: "14px" }}>
+          <Link href={"/campaigns/[address]/requests"} as={`/campaigns/${contractAddress}/requests`} passHref>
+            <Button primary>View Requests</Button>
+          </Link>
+        </Grid.Row>
       </Grid>
     </>
   )
