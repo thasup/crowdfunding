@@ -12,7 +12,7 @@ A crowd funding dapp deployed on **Goerli** test network built by **NextJS**.
 - [CreativeFund](#creativefund)
 - [Table of contents](#table-of-contents)
 - [Demo](#demo)
-- [Install](#install)
+- [How to run the project](#how-to-run-the-project)
 - [Setup ENV](#setup-env)
 - [Highlight Dependencies](#highlight-dependencies)
 - [Highlight Technology](#highlight-technology)
@@ -29,12 +29,12 @@ Working in progress...
 
 [(Back to top)](#table-of-contents) -->
 
-# Install
+# How to run the project
 
 [(Back to top)](#table-of-contents)
 
 1. clone this repository on your computer
-2. Install [metmask extension](https://metamask.io/) on browser and setup your wallet
+2. Install [metamask extension](https://metamask.io/) on browser and setup your wallet
 3. Get some token from [Goerli faucet](https://faucets.chain.link/goerli) for cover the cost of transactions.
 4. run command `npm install` to install all dependencies
 5. setup [environment variables](#setup-env) 
@@ -53,7 +53,7 @@ Working in progress...
 
 [(Back to top)](#table-of-contents)
 
-- NODE.JS version 18.9.0
+- `node` version 18.9.0
 - `solc` version 0.4.17
 - `web3` version 1.8.0
 - `react` version 18.2.0
