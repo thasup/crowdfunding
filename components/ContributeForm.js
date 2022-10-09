@@ -1,5 +1,4 @@
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useState } from 'react';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
 
