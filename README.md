@@ -1,6 +1,6 @@
 <!-- Add banner here -->
 
-<!-- ![Project Preview](https://www.dropbox.com/s/2u3s4up6rukd7fk/entire_page.png?raw=1) -->
+![Project Preview](https://www.dropbox.com/s/vtgtu3z9n1fgazh/CreativeFund-funding-platform-for-creative-projects.png?raw=1)
 
 # CreativeFund
 
