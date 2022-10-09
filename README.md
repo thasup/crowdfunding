@@ -5,7 +5,7 @@
 # CreativeFund
 
 <!-- Describe your project in brief -->
-A crowd funding dapp deployed on **Goerli** test network built by **NextJS**.
+A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli test network** and built by **NextJS**.
 
 # Table of contents
 
@@ -58,6 +58,8 @@ Working in progress...
 - `web3` version 1.8.0
 - `react` version 18.2.0
 - `next` version 12.3.1
+- `mocha` version 10.0.0
+- `ganache cli` version 6.12.2
 
 # Highlight Technology
 
@@ -66,8 +68,9 @@ Working in progress...
 - Solidity
 - Web3.js
 - Infura API
-- Ganache CLI
 - React.js
 - Next.js
 - Semantic UI
 - Node.js
+- Ganache CLI
+- Mocha

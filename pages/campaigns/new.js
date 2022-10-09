@@ -18,12 +18,15 @@ const newCampaign = () => {
     setLoading(true);
     setErrorMessage("");
 
+    const convertedToWei = web3.utils.toWei(minimumContribution, "ether");
+
     try {
       const account = await web3.eth.getAccounts();
-      await factory.methods.createCampaign(minimumContribution)
+      await factory.methods.createCampaign(convertedToWei)
         .send({
           from: account[0]
         });
+      setMinimumContribution(0);
       router.push("/");
     } catch (error) {
       setErrorMessage(error.message);
@@ -34,13 +37,13 @@ const newCampaign = () => {
 
   return (
     <div>
-      <h2>New Campaign!</h2>
+      <h2>Create a New Campaign!</h2>
 
       <Form onSubmit={onSubmit} error={!!errorMessage}>
         <Form.Field>
           <label>Minimum Contribution</label>
           <Input
-            label="Wei"
+            label="Ether"
             labelPosition="right"
             value={minimumContribution}
             onChange={(event) => setMinimumContribution(event.target.value)}
