@@ -6,7 +6,7 @@ function HomePage({ campaigns }) {
   const items = campaigns.map((item) => {
     return {
       header: item,
-      description: <a>View Campaign</a>,
+      description: <Link href={"/campaigns/[address]"} as={`/campaigns/${item}`}>View Campaign</Link>,
       fluid: true,
     };
   });
