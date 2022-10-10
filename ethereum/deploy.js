@@ -1,12 +1,10 @@
-const path = require('path');
-require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-  process.env.PRIVATE_KEY,
-  process.env.ALCHEMY_URL
+  process.env.privateKey,
+  process.env.alchemyUrl
 );
 
 const web3 = new Web3(provider);
