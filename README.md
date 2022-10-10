@@ -22,8 +22,7 @@ A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli tes
 
 [(Back to top)](#table-of-contents)
 
-<!-- [Demo Link](https://thasup-suppee.herokuapp.com/) -->
-Working in progress...
+[DEMO LINK](https://creativefund.vercel.app/)
 
 <!-- # Features
 
@@ -35,9 +34,9 @@ Working in progress...
 
 1. clone this repository on your computer
 2. Install [metamask extension](https://metamask.io/) on browser and setup your wallet
-3. Get some token from [Goerli faucet](https://faucets.chain.link/goerli) for cover the cost of transactions.
+3. Get some token from [Goerli faucet](https://goerlifaucet.com/) for cover the cost of transactions.
 4. run command `npm install` to install all dependencies
-5. setup [environment variables](#setup-env) 
+5. setup [environment variables](#setup-env) in `next.config.js file`
 6. run command `npm run dev` to run the project
 7. go to `http://localhost:3000/`
 
@@ -45,9 +44,16 @@ Working in progress...
 
 [(Back to top)](#table-of-contents)
 
-**PRIVATE_KEY** : [How to get your private key from metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
+**privateKey** : [How to get your private key from metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
 
-**INFURA_URL** : [How to get your infura API key](https://docs.infura.io/infura/getting-started#2.-create-a-project) (make sure to choose Goerli testnet in network end point)
+**alchemyUrl** : [How to get your Alchemy API key](https://docs.alchemy.com/docs/hello-world-smart-contract#step-2-create-your-app-and-api-key) (make sure to choose Goerli testnet in network end point)
+
+**contractAddress** : you can get the contract address after deployed it on Goerli test network by run command
+```
+cd ethereum
+node complie.js
+node deploy.js
+```
 
 # Highlight Dependencies
 
@@ -67,7 +73,7 @@ Working in progress...
 
 - Solidity
 - Web3.js
-- Infura API
+- Alchemy API
 - React.js
 - Next.js
 - Semantic UI
