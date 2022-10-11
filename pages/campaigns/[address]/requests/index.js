@@ -23,6 +23,10 @@ const requestsDetail = ({ contractAddress, requestsCount, requests, approversCou
 
   return (
     <div>
+      <Link href={"/campaigns/[address]"} as={`/campaigns/${contractAddress}`}>
+        Back
+      </Link>
+
       <h2>Request List</h2>
       <Link href={"/campaigns/[address]/requests/new"} as={`/campaigns/${contractAddress}/requests/new`}>
         <Button primary floated="right" style={{ marginBottom: "10px" }}>Add Request</Button>

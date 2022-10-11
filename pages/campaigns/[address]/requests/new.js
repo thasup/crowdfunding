@@ -49,6 +49,7 @@ const newRequest = ({ contractAddress }) => {
       <Link href={"/campaigns/[address]/requests"} as={`/campaigns/${contractAddress}/requests`}>
         Back
       </Link>
+
       <h2>Create a Request</h2>
 
       <Form onSubmit={onSubmit} error={!!errorMessage}>

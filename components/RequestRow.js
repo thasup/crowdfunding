@@ -1,3 +1,5 @@
+import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { Table, Button } from "semantic-ui-react";
 import web3 from "../ethereum/web3";
 import Campaign from "../ethereum/campaign";
@@ -7,20 +9,44 @@ const { Row, Cell } = Table;
 export const RequestRow = ({ request, id, address, approversCount }) => {
   const { description, value, recipient, complete, approvalCount } = request;
 
+  const [loading, setLoading] = useState(false);
+
+  const router = useRouter();
+
   const campaign = Campaign(address);
 
   const handleApproveRequest = async () => {
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
-    await campaign.methods.approveRequest(id).send({
-      from: accounts[0],
-    });
+
+    try {
+      await campaign.methods.approveRequest(id).send({
+        from: accounts[0],
+      });
+      router.replace(`/campaigns/${address}/requests`);
+    } catch (error) {
+      // TODO: handle error
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleFinalize = async () => {
+    setLoading(true);
+
     const accounts = await web3.eth.getAccounts();
-    await campaign.methods.finalizeRequest(id).send({
-      from: accounts[0],
-    });
+
+    try {
+      await campaign.methods.finalizeRequest(id).send({
+        from: accounts[0],
+      });
+      router.replace(`/campaigns/${address}/requests`);
+    } catch (error) {
+      // TODO: handle error
+    } finally {
+      setLoading(false);
+    }
   };
 
   const readyToFinalize = !complete && approvalCount >= approversCount / 2;
@@ -34,7 +60,7 @@ export const RequestRow = ({ request, id, address, approversCount }) => {
       <Cell>{`${approvalCount}/${approversCount}`}</Cell>
       <Cell>
         {!complete ? (
-          <Button onClick={handleApproveRequest} color="green" basic>
+          <Button onClick={handleApproveRequest} color="green" loading={loading} basic>
             Approve
           </Button>
         ) : (
@@ -43,7 +69,7 @@ export const RequestRow = ({ request, id, address, approversCount }) => {
       </Cell>
       <Cell>
         {readyToFinalize && (
-          <Button onClick={handleFinalize} color="teal" basic>
+          <Button onClick={handleFinalize} color="teal" loading={loading} basic>
             Finalize
           </Button>
         )}

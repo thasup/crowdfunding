@@ -21,10 +21,10 @@ const newCampaign = () => {
     const convertedToWei = web3.utils.toWei(minimumContribution, "ether");
 
     try {
-      const account = await web3.eth.getAccounts();
+      const accounts = await web3.eth.getAccounts();
       await factory.methods.createCampaign(convertedToWei)
         .send({
-          from: account[0]
+          from: accounts[0]
         });
       setMinimumContribution(0);
       router.push("/");
