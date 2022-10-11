@@ -38,7 +38,7 @@ A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli tes
 2. Install [metamask extension](https://metamask.io/) on browser and setup your wallet
 3. Get some token from [Goerli faucet](https://goerlifaucet.com/) for cover the cost of transactions.
 4. run command `npm install` to install all dependencies
-5. setup [environment variables](#setup-env) in `next.config.js file`
+5. setup [environment variables](#setup-env) in `.env.local` file
 6. run command `npm run dev` to run the project
 7. go to `http://localhost:3000/`
 
@@ -46,11 +46,11 @@ A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli tes
 
 [(Back to top)](#table-of-contents)
 
-**privateKey** : [How to get your private key from metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
+**PRIVATE_KEY** : [How to get your private key from metamask](https://metamask.zendesk.com/hc/en-us/articles/360015289632-How-to-export-an-account-s-private-key)
 
-**alchemyUrl** : [How to get your Alchemy API key](https://docs.alchemy.com/docs/hello-world-smart-contract#step-2-create-your-app-and-api-key) (make sure to choose Goerli testnet in network end point)
+**ALCHEMY_URL** : [How to get your Alchemy API key](https://docs.alchemy.com/docs/hello-world-smart-contract#step-2-create-your-app-and-api-key) (make sure to choose Goerli testnet in network end point)
 
-**contractAddress** : you can get the contract address after deployed it on Goerli test network by run command
+**CONTRACT_ADDRESS** : you can get the contract address after deployed it on Goerli test network by run command
 ```
 cd ethereum
 node complie.js

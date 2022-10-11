@@ -3,8 +3,8 @@ const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
 
 const provider = new HDWalletProvider(
-  process.env.privateKey,
-  process.env.alchemyUrl
+  process.env.PRIVATE_KEY,
+  process.env.ALCHEMY_URL
 );
 
 const web3 = new Web3(provider);

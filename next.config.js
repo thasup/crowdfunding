@@ -5,9 +5,9 @@ module.exports = (phase, { defaultConfig }) => {
    */
   const nextConfig = {
     env: {
-      alchemyUrl: "YOUR ALCHEMY URL",
-      privateKey: "YOUR PRIVATE KEY",
-      contractAddress: "YOUR CONTRACT ADDRESS",
+      ALCHEMY_URL: process.env.ALCHEMY_URL,
+      PRIVATE_KEY: process.env.PRIVATE_KEY,
+      CONTRACT_ADDRESS: process.env.CONTRACT_ADDRESS,
     },
   };
   return nextConfig;
