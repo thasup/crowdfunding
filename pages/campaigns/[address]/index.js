@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react'
 import { Button, Card, Grid } from 'semantic-ui-react';
 import ContributeForm from '../../../components/ContributeForm';
 
@@ -40,7 +39,11 @@ const showCampaign = ({ contractAddress, minimumContribution, balance, requestsC
   ];
 
   return (
-    <>
+    <div>
+      <Link href="/">
+        Back
+      </Link>
+
       <h2>Campaign Detail</h2>
       <p><strong>Contract Address : </strong>{contractAddress}</p>
 
@@ -60,14 +63,14 @@ const showCampaign = ({ contractAddress, minimumContribution, balance, requestsC
           </Link>
         </Grid.Row>
       </Grid>
-    </>
+    </div>
   )
 };
 
 export async function getServerSideProps(context) {
   const { address } = context.query;
 
-  const campaign = Campaign(address);
+  const campaign = await Campaign(address);
   const jsonSummary = await campaign.methods.getSummary().call();
   const summary = JSON.parse(JSON.stringify(jsonSummary));
 

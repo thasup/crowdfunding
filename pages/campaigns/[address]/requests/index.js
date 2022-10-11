@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import React from 'react'
 import { Button, Table } from 'semantic-ui-react'
 
 import Campaign from "../../../../ethereum/campaign"
@@ -55,7 +54,7 @@ const requestsDetail = ({ contractAddress, requestsCount, requests, approversCou
 export async function getServerSideProps(context) {
   const { address } = context.query;
 
-  const campaign = Campaign(address);
+  const campaign = await Campaign(address);
   const requestsCount = await campaign.methods.getRequestsCount().call();
   const approversCount = await campaign.methods.approversCount().call();
 

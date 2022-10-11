@@ -1,5 +1,5 @@
+import Link from 'next/link';
 import { useRouter } from 'next/router';
-import React from 'react';
 import { useState } from 'react';
 import { Button, Form, Input, Message } from 'semantic-ui-react';
 
@@ -37,6 +37,10 @@ const newCampaign = () => {
 
   return (
     <div>
+      <Link href="/">
+        Back
+      </Link>
+
       <h2>Create a New Campaign!</h2>
 
       <Form onSubmit={onSubmit} error={!!errorMessage}>

@@ -4,6 +4,8 @@
 
 # CreativeFund
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2ebf1486-1baa-4827-af29-9584835addc4/deploy-status)](https://app.netlify.com/sites/thasup-creative-fund/deploys)
+
 <!-- Describe your project in brief -->
 A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli test network** and built by **NextJS**.
 
@@ -22,7 +24,7 @@ A crowd funding dapp using the **Ethereum blockchain**, deployed on **Goerli tes
 
 [(Back to top)](#table-of-contents)
 
-[DEMO LINK](https://creativefund.vercel.app/)
+[DEMO LINK](https://thasup-creativefund.vercel.app/)
 
 <!-- # Features
 

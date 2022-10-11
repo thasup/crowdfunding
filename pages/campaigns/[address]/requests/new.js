@@ -20,10 +20,10 @@ const newRequest = ({ contractAddress }) => {
     setLoading(true);
     setErrorMessage("");
 
-    const campaign = Campaign(contractAddress);
+    const campaign = await Campaign(contractAddress);
 
     try {
-      const account = await web3.eth.getAccounts();
+      const accounts = await web3.eth.getAccounts();
 
       await campaign.methods.createRequest(
         description,
@@ -31,7 +31,7 @@ const newRequest = ({ contractAddress }) => {
         recipient,
       )
         .send({
-          from: account[0]
+          from: accounts[0]
         });
       setValue(0);
       setDescription("");

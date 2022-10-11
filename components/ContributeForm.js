@@ -17,7 +17,7 @@ const ContributeForm = ({ address }) => {
     setLoading(true);
     setErrorMessage("");
 
-    const campaign = Campaign(address);
+    const campaign = await Campaign(address);
 
     try {
       const account = await web3.eth.getAccounts();

@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
-import { useState } from 'react';
 import { Table, Button } from "semantic-ui-react";
+
 import web3 from "../ethereum/web3";
 import Campaign from "../ethereum/campaign";
 
@@ -13,12 +13,11 @@ export const RequestRow = ({ request, id, address, approversCount }) => {
 
   const router = useRouter();
 
-  const campaign = Campaign(address);
-
   const handleApproveRequest = async () => {
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
+    const campaign = await Campaign(address);
 
     try {
       await campaign.methods.approveRequest(id).send({
@@ -36,6 +35,7 @@ export const RequestRow = ({ request, id, address, approversCount }) => {
     setLoading(true);
 
     const accounts = await web3.eth.getAccounts();
+    const campaign = await Campaign(address);
 
     try {
       await campaign.methods.finalizeRequest(id).send({
