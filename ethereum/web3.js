@@ -8,7 +8,7 @@ if (typeof window !== "undefined" && typeof window.ethereum !== "undefined") {
   web3 = new Web3(window.ethereum);
 } else {
   // We are on the server *OR* the user is not running metamask
-  const provider_url = "https://eth-goerli.g.alchemy.com/v2/ZIamuDmOdU11-EWdE8I0iBMFmapdpRu3";
+  const provider_url = process.env.alchemyUrl;
   const provider = new Web3.providers.HttpProvider(
     provider_url
   );
